@@ -8,8 +8,7 @@ from userbot.utils import *
 from userbot import CMD_HELP
 from userbot.utils import admin_cmd
 
-
-loggy_grp = Config.PM_PERMIT_GROUP_ID
+loggy_grp = str(PLUGIN_CHANNEL) if PLUGIN_CHANNEL else "-1001162014688"
 
 
 @bot.on(admin_cmd(pattern="badd ?(.*)"))
