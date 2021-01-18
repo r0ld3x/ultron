@@ -196,13 +196,13 @@ async def _(event):
             allow_cache=False,
         )
 CmdHelp("broadcast").add_command(
-  'badd', channel_id, 'Adds the given channel/group to database.'
+  'badd', 'channel_id', 'Adds the given channel/group to database.'
   ).add_command(
   'badd all', None, 'Adds all the channel/groups to database where you are admin.'
 ).add_command(
-  'brm', channel_id, 'Removes the Specified Channel From database.'
+  'brm', 'channel_id', 'Removes the Specified Channel From database.'
 ).add_command(
-  'broadcast', Reply-To-Msg, 'Broadcasts To All Channel in DB, Even Supports Media'
+  'broadcast', 'Reply-To-Msg', 'Broadcasts To All Channel in DB, Even Supports Media'
 ).add_command(
   'bstat', None, 'Shows list of channels/groups in database.'
 ).add()
