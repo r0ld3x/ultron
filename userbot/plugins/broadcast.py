@@ -23,8 +23,6 @@ from userbot.plugins.sql_helper.broadcast_sql import (
 from userbot.utils import admin_cmd
 
 
-loggy_grp = Config.PRIVATE_GROUP_ID
-
 
 @bot.on(admin_cmd(pattern="badd ?(.*)"))
 async def _(event):
@@ -65,7 +63,7 @@ async def _(event):
     if not already_added(input_chnnl):
         add_chnnl_in_db(input_chnnl)
         await event.edit(f"Fine. I have Added {input_chnnl} To DataBase.")
-        await borg.send_message(loggy_grp, f"Added {input_chnnl} To DB")
+        await borg.send_message(Config.PRIVATE_GROUP_ID, f"Added {input_chnnl} To DB")
 
 
 @bot.on(admin_cmd(pattern="brm ?(.*)"))
@@ -86,7 +84,7 @@ async def _(event):
     if already_added(input_chnnl):
         rm_channel(input_chnnl)
         await event.edit(f"Fine. I have Removed {input_chnnl} From DataBase.")
-        await borg.send_message(loggy_grp, f"Removed {input_chnnl} From DB")
+        await borg.send_message(Config.PRIVATE_GROUP_ID, f"Removed {input_chnnl} From DB")
     elif not already_added(input_chnnl):
         await event.edit(
             "Are You Sure? , You Haven't Added This Group / Channel To Database"
@@ -120,7 +118,7 @@ async def _(event):
                 total_errors += 1
                 errorno += f"{e} \n"
         await borg.send_message(
-            loggy_grp,
+            Config.PRIVATE_GROUP_ID,
             f"Error : {total_errors}\nError : {errorno} \n\n",
         )
         if os.path.exists(ok):
@@ -139,7 +137,7 @@ async def _(event):
         f"BroadCast Success In : {total_count} \nFailed In : {total_errors} \nTotal Channel In DB : {total_chnnl}"
     )
     await borg.send_message(
-        loggy_grp,
+        Config.PRIVATE_GROUP_ID,
         f"BroadCast Success In : {total_count} \nFailed In : {total_errors} \nTotal Channel In DB : {total_chnnl}",
     )
 
@@ -167,14 +165,14 @@ async def _(event):
         total_errors += 1
         errorno += f"{e} \n"
     await borg.send_message(
-        loggy_grp,
+        Config.PRIVATE_GROUP_ID,
         f"Failed in {forbard.chat_id} Because Of Error : `{errorno}` \n\n",
     )
     await event.edit(
         f"Forward Success in {total_count} And Failed In {total_errors} And Total Channel In Db is {total_chnnl}"
     )
     await borg.send_message(
-        loggy_grp,
+        Config.PRIVATE_GROUP_ID,
         f"Forward Success in {total_count} And Failed In {total_errors} And Total Channel In Db is {total_chnnl}",
     )
 
