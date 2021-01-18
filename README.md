@@ -6,7 +6,7 @@
 
 # Ultron - Telegram UserBot
 
-# <p align="left"><a href="https://github.com/r0ld3x/ultron"><img src="https://github-readme-stats.vercel.app/api/pin?username=r0ld3x&show_icons=true&theme=dark&hide_border=true&repo=r0ld3x"></a></p><p align="centre"><a href="https://t.me/ultronub"> <img src="https://img.shields.io/badge/telegram-Support_Group-blue?style=social&logo=telegram" alt="Support" /></a><a href="https://github.com/r0ld3x/ultron/stargazers"><img src="https://img.shields.io/github/stars/xditya/TeleBot?style=social"></a><a href="https://github.com/r0ld3x/ultron/fork"><img src="https://img.shields.io/github/forks/xditya/TeleBot?label=Fork&logoColor=blue&style=social"></a>	<a href="https://github.com/r0ld3x/ultron"><img src="https://img.shields.io/github/last-commit/r0ld3x/ultron?style=flat-square"></a></p>
+# <p align="left"><a href="https://github.com/r0ld3x/ultron"><img src="https://github-readme-stats.vercel.app/api/pin?username=r0ld3x&show_icons=true&theme=dark&hide_border=true&repo=ultron"></a></p><p align="centre"><a href="https://t.me/ultronub"> <img src="https://img.shields.io/badge/telegram-Support_Group-blue?style=social&logo=telegram" alt="Support" /></a><a href="https://github.com/r0ld3x/ultron/stargazers"><img src="https://img.shields.io/github/stars/xditya/TeleBot?style=social"></a><a href="https://github.com/r0ld3x/ultron/fork"><img src="https://img.shields.io/github/forks/xditya/TeleBot?label=Fork&logoColor=blue&style=social"></a>	<a href="https://github.com/r0ld3x/ultron"><img src="https://img.shields.io/github/last-commit/r0ld3x/ultron?style=flat-square"></a></p>
     
 
 
