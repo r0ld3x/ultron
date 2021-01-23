@@ -30,7 +30,7 @@ KRAKEN = (
     if CUSTOM_PMPERMIT
     else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS CRIME"
 )
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hêll Usêr"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Ultron"
 USER_BOT_WARN_ZERO = "**You were spamming my sweet master's inbox, henceforth you have been blocked by my master's Ultron.**\n__Now GTFO, i'm busy__"
 USER_BOT_NO_WARN = (
     "Hello, This is **Ultron The Ultra Private Security Protocol⚠️**.\n"
