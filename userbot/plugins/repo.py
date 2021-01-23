@@ -16,7 +16,7 @@ from userbot.utils import admin_cmd, sudo_cmd, edit_or_reply
 @bot.on(sudo_cmd(pattern=f"repo", allow_sudo=True))
 async def source(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
-        await edit_or_reply(e, "Click [here](https://github.com/r0ld3x/ultron) to open this __Ultron__ Repo.. Join channel :- @its_ultron")
+        await edit_or_reply(e, "Click [here](https://github.com/r0ld3x/ultron) to open this __Ultron__ Repo.. Join channel :- @rifelmods")
 
 
 @bot.on(admin_cmd(pattern="rpt(?: |$)(.*)", outgoing=True))
