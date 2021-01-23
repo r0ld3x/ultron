@@ -10,6 +10,7 @@ from telethon import functions
 
 import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from userbot import ALIVE_NAME
+from userbot import *
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Ultron"
 PREV_REPLY_MESSAGE = {}
@@ -26,7 +27,7 @@ async def _(event):
         if event.is_private:
 
             PM = (
-                f"`Hello. THIS IS ME [ULTRON](https://t.me/its_ultron). \n YOU ARE ACCESSING THE AVAILABE MENU OF MY MASTER ({DEFAULTUSER}),`"
+                f"Hello. THIS IS ME [ULTRON](https://t.me/rifelmods). \n YOU ARE ACCESSING THE AVAILABE MENU OF MY MASTER ({DEFAULTUSER}),"
                 "__LET'S MAKE THIS SMOOTH AND LET ME KNOW WHY YOU ARE HERE.__\n\n"
                 "**CHOOSE ONE OF THE FOLLOWING REASONS WHY YOU ARE HERE:**\n\n"
                 "`1`. __TO CHAT WITH MY MASTER.__\n"
