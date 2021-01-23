@@ -17,7 +17,7 @@ else:
 kraken = bot.uid
 
 PM_IMG = "https://telegra.ph/file/2f0a575332c180d75e7b5.png"
-pm_caption = f"🔅 🔅 🔅HEY I AM [ULTRON](https://t.me/ultronub) PRIME🔅 🔅 🔅 THE PRIVATE ASSISTANT OF MY MASTER [{DEFAULTUSER}](tg://user?id={kraken}) \n\n"
+pm_caption = f"🔅 🔅 🔅HEY I AM [ULTRON](https://t.me/rifelmods) PRIME🔅 🔅 🔅 THE PRIVATE ASSISTANT OF MY MASTER [{DEFAULTUSER}](tg://user?id={kraken}) \n\n"
 
 pm_caption += "MY TELETHON VERSION: 1.15.0 \n"
 
@@ -25,9 +25,9 @@ pm_caption += "MY PYTHON VERSION: 3.7.4 \n"
 
 pm_caption += f"DEVLOPED BY:  [ROLDEX](https://t.me/r0ld3x)\n"
 
-pm_caption += "SUPPORT CHANNEL : [HERE](https://t.me/ultronub)\n"
+pm_caption += "SUPPORT CHANNEL : [HERE](https://t.me/rifelmods)\n"
 
-pm_caption += "SUPPORT GROUP : [HERE](https://t.me/ultronub_chats)\n"
+pm_caption += "SUPPORT GROUP : [HERE](https://t.me/rifelmodschats)\n"
 
 pm_caption += "[✨REPO✨](https://github.com/r0ld3x/ultron) 🔹 [📜License📜](https://github.com/r0ld3x/ultron/blob/master/LICENSE)\n\n"
 
