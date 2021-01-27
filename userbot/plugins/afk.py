@@ -1,5 +1,4 @@
-# by uniborg...Thanks @spechide
-# Now will be used in HellBot too....
+
 import asyncio
 import datetime
 from datetime import datetime
@@ -91,7 +90,7 @@ async def on_afk(event):
         
         message_to_reply = (
             f"Hey! My Master Is Currently Offline... Since For `{total_afk_time}`\n"
-            + f"\n\n👇**The Reason Is**👇 :-`{reason}` \n By [Ultron](https://t.me/ultronub)"
+            + f"\n\n👇**The Reason Is**👇 :-`{reason}` "
   if reason
             else f"**Hey!**\n My Master Is Currently Unavailable.\n Since From `{total_afk_time}`\n My Master Will Be Back When He Feel To Come \n By [Ultron](https://t.me/ultronub)"
         )
@@ -131,10 +130,10 @@ async def _(event):
         USER_AFK = f"yes: {reason} {hellpic}"  # pylint:disable=E0602
         if reason:
             await borg.send_message(
-                event.chat_id, f"Hey! My Master Is going Afk Because `{reason}` \n By [Ultron](https://t.me/ultronub)", file=hellpic
+                event.chat_id, f"Hey! My Master Is going Afk Because `{reason}` \n ", file=hellpic
             )
         else:
-            await borg.send_message(event.chat_id, f"Hey! My Master Is going Afk \n By [Ultron](https://t.me/ultronub)", file=hellpic)
+            await borg.send_message(event.chat_id, f"Hey! My Master Is going Afk \n ", file=hellpic)
         await asyncio.sleep(0.001)
         await event.delete()
         try:
