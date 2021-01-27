@@ -17,7 +17,7 @@ else:
 kraken = bot.uid
 
 PM_IMG = "https://telegra.ph/file/2f0a575332c180d75e7b5.png"
-pm_caption = f"🔅 🔅 🔅HEY I AM [ULTRON](https://t.me/rifelmods) PRIME🔅 🔅 🔅 THE PRIVATE ASSISTANT OF MY MASTER [{DEFAULTUSER}](tg://user?id={kraken}) \n\n"
+pm_caption = f"🔅 🔅 🔅HEY I AM [ULTRON](https://t.me/moragmod) PRIME🔅 🔅 🔅 THE ASSISTANT OF MY MASTER [{DEFAULTUSER}](tg://user?id={kraken}) \n\n"
 
 pm_caption += "MY TELETHON VERSION: 1.15.0 \n"
 
