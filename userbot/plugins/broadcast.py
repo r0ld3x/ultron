@@ -13,6 +13,10 @@ from userbot import ALIVE_NAME, CUSTOM_PMPERMIT, Devil_ID
 from userbot.uniborgConfig import Config
 from userbot.utils import admin_cmd
 from userbot.cmdhelp import CmdHelp
+from userbot import *
+from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
+from userbot.utils import *
+
 
 PM_TRUE_FALSE = Config.PM_DATA
 
