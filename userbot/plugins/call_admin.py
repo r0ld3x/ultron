@@ -12,7 +12,7 @@ from userbot.utils import admin_cmd
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "@admin: Its Me [Ultron Prime](https://t.me/its_ultron) Here"
+    mentions = "@admin: COME HERE ASAP!"
     chat = await event.get_input_chat()
     async for x in borg.iter_participants(chat, filter=ChannelParticipantsAdmins):
         mentions += f"[\u2063](tg://user?id={x.id})"
