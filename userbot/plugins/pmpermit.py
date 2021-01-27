@@ -1,4 +1,3 @@
-# pmpermit for Ultron.....
 
 import asyncio
 import io
@@ -7,8 +6,8 @@ import time
 
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
-from userbot import *
-import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
+
+from userbot.plugins.sql_helper import pmpermit_sql as pmpermit_sql
 from userbot import ALIVE_NAME, CUSTOM_PMPERMIT, Devil_ID
 from userbot.uniborgConfig import Config
 from userbot.utils import admin_cmd
@@ -20,7 +19,7 @@ PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 HELLPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/2f0a575332c180d75e7b5.png"
+    else "https://telegra.ph/file/24f78cfaaed586a4ec4c5.jpg"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
@@ -30,7 +29,7 @@ KRAKEN = (
     if CUSTOM_PMPERMIT
     else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n THIS IS ILLEGAL AND REGARDED AS CRIME"
 )
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Ultron"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Hêll Usêr"
 USER_BOT_WARN_ZERO = "**You were spamming my sweet master's inbox, henceforth you have been blocked by my master's Ultron.**\n__Now GTFO, i'm busy__"
 USER_BOT_NO_WARN = (
     "Hello, This is **Ultron The Ultra Private Security Protocol⚠️**.\n"
