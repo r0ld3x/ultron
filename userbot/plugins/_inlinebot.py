@@ -59,7 +59,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             veriler = button(0, sorted(CMD_HELP))
             result = await builder.article(
                 f"Hey! Only use .help please",
-                text=f"**HELLO SIR  I AM ULTRON THE ASSISTANT OF @r0ld3x **\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
+                text=f"**HELLO SIR  I AM ULTRON THE ASSISTANT OF MY MASTER  **\n\n__Number of plugins installed__ :`{len(CMD_HELP)}`\n**page:** 1/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False,
             )
@@ -74,20 +74,18 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         else:
             result = builder.article(
                 "@r0ld3xrobot",
-                text="""**Hey! This is [Ultron](https://t.me/ultronub) \nYou can know more about me from the links given below 👇**""",
+                text="""**Hey! This is [Ultron Prime](https://t.me/moragmod) And  The Assistant For My Master \n If Any Problem Then Tell Us :- @moragmods \nYou can know more about me from the links given below 👇**""",
                 buttons=[
                     [
-                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/ultronub"),
-                        custom.Button.url(
-                            "⚡ GROUP ⚡", "https://t.me/ultronub_chats"
-                        ),
+                        custom.Button.url("🔥 CHANNEL 🔥", "https://t.me/moragmod"),
+
                     ],
                     [
                         custom.Button.url(
                             "✨ REPO ✨", "https://github.com/r0ld3x/ultron"),
                         custom.Button.url
                     (
-                            "🔰 TUTORIAL 🔰", "https://t.me/ultronub"
+                            "🔰 TUTORIAL 🔰", "https://t.me/moragmod"
                     )
                     ],
                 ],
@@ -99,14 +97,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     async def page(event):
         if not event.query.user_id == bot.uid:
             return await event.answer(
-                "JOIN @ultronub FOR REGULAR UPDATES AND MANY MORE \n © Ultron ™",
+                "JOIN @moragmod FOR REGULAR UPDATES AND MANY MORE \n © Ultron ™",
                 cache_time=0,
                 alert=False,
             )
         page = int(event.data_match.group(1).decode("UTF-8"))
         veriler = button(page, CMD_HELP)
         await event.edit(
-            f"**HEY THIS IS ME ** [Ultron](https://t.me/ultronub) \n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
+            f"**HEY THIS IS ME ** [Ultron Prime](https://t.me/moragmod) **THE ASSISTANT FOR MY MASTER  \n\n**Number of modules installed :** `{len(CMD_HELP)}`\n**page:** {page + 1}/{veriler[0]}",
             buttons=veriler[1],
             link_preview=False,
         )
