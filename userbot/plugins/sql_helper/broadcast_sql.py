@@ -1,58 +1,130 @@
-#    Copyright (C) 2020 @HeisenbergTheDanger
+import threading
 
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
-
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, UnicodeText, distinct, func
 
 from . import BASE, SESSION
 
 
-class Broadcast(BASE):
-    __tablename__ = "Broadcast"
-    chat_id = Column(String(14), primary_key=True)
+class CatBroadcast(BASE):
+    __tablename__ = "Ultron"
+    keywoard = Column(UnicodeText, primary_key=True)
+    group_id = Column(String(14), primary_key=True, nullable=False)
 
-    def __init__(self, chat_id):
-        self.chat_id = chat_id
+    def __init__(self, keywoard, group_id):
+        self.keywoard = keywoard
+        self.group_id = str(group_id)
 
+    def __repr__(self):
+        return "<Ultron Broadcast channels '%s' for %s>" % (self.group_id, self.keywoard)
 
-Broadcast.__table__.create(checkfirst=True)
-
-
-def add_chnnl_in_db(chat_id: int):
-    chnnl_id = Broadcast(str(chat_id))
-    SESSION.add(chnnl_id)
-    SESSION.commit()
-
-
-def get_all_chnnl():
-    stark = SESSION.query(Broadcast).all()
-    SESSION.close()
-    return stark
+    def __eq__(self, other):
+        return bool(
+            isinstance(other, CatBroadcast)
+            and self.keywoard == other.keywoard
+            and self.group_id == other.group_id
+        )
 
 
-def already_added(chat_id):
+CatBroadcast.__table__.create(checkfirst=True)
+
+CATBROADCAST_INSERTION_LOCK = threading.RLock()
+
+BROADCAST_CHANNELS = {}
+
+
+def add_to_broadcastlist(keywoard, group_id):
+    with CATBROADCAST_INSERTION_LOCK:
+        broadcast_group = CatBroadcast(keywoard, str(group_id))
+
+        SESSION.merge(broadcast_group)
+        SESSION.commit()
+        BROADCAST_CHANNELS.setdefault(keywoard, set()).add(str(group_id))
+
+
+def rm_from_broadcastlist(keywoard, group_id):
+    with CATBROADCAST_INSERTION_LOCK:
+        broadcast_group = SESSION.query(CatBroadcast).get((keywoard, str(group_id)))
+        if broadcast_group:
+            if str(group_id) in BROADCAST_CHANNELS.get(keywoard, set()):
+                BROADCAST_CHANNELS.get(keywoard, set()).remove(str(group_id))
+
+            SESSION.delete(broadcast_group)
+            SESSION.commit()
+            return True
+
+        SESSION.close()
+        return False
+
+
+def is_in_broadcastlist(keywoard, group_id):
+    with CATBROADCAST_INSERTION_LOCK:
+        broadcast_group = SESSION.query(CatBroadcast).get((keywoard, str(group_id)))
+        return bool(broadcast_group)
+
+
+def del_keyword_broadcastlist(keywoard):
+    with CATBROADCAST_INSERTION_LOCK:
+        broadcast_group = (
+            SESSION.query(CatBroadcast.keywoard)
+            .filter(CatBroadcast.keywoard == keywoard)
+            .delete()
+        )
+        BROADCAST_CHANNELS.pop(keywoard)
+        SESSION.commit()
+
+
+def get_chat_broadcastlist(keywoard):
+    return BROADCAST_CHANNELS.get(keywoard, set())
+
+
+def get_broadcastlist_chats():
     try:
-        return SESSION.query(Broadcast).filter(Broadcast.chat_id == str(chat_id)).one()
-    except:
-        return None
+        chats = SESSION.query(CatBroadcast.keywoard).distinct().all()
+        return [i[0] for i in chats]
     finally:
         SESSION.close()
 
 
-def rm_channel(chat_id):
-    remove = SESSION.query(Broadcast).get(str(chat_id))
-    if remove:
-        SESSION.delete(remove)
-        SESSION.commit()
+def num_broadcastlist():
+    try:
+        return SESSION.query(CatBroadcast).count()
+    finally:
+        SESSION.close()
+
+
+def num_broadcastlist_chat(keywoard):
+    try:
+        return (
+            SESSION.query(CatBroadcast.keywoard)
+            .filter(CatBroadcast.keywoard == keywoard)
+            .count()
+        )
+    finally:
+        SESSION.close()
+
+
+def num_broadcastlist_chats():
+    try:
+        return SESSION.query(func.count(distinct(CatBroadcast.keywoard))).scalar()
+    finally:
+        SESSION.close()
+
+
+def __load_chat_broadcastlists():
+    global BROADCAST_CHANNELS
+    try:
+        chats = SESSION.query(CatBroadcast.keywoard).distinct().all()
+        for (keywoard,) in chats:
+            BROADCAST_CHANNELS[keywoard] = []
+
+        all_groups = SESSION.query(CatBroadcast).all()
+        for x in all_groups:
+            BROADCAST_CHANNELS[x.keywoard] += [x.group_id]
+
+        BROADCAST_CHANNELS = {x: set(y) for x, y in BROADCAST_CHANNELS.items()}
+
+    finally:
+        SESSION.close()
+
+
+__load_chat_broadcastlists()
