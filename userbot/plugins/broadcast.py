@@ -12,7 +12,7 @@ from userbot.utils import admin_cmd
 from userbot import *
 from userbot.plugins.sql_helper.mute_sql import is_muted, mute, unmute
 from userbot.utils import *
-from user.plugins.sql_helper import *
+from userbot.plugins.sql_helper import *
 
 
 PM_TRUE_FALSE = Config.PM_DATA
