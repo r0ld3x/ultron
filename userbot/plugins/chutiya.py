@@ -15,7 +15,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Ultron"
 async def _(event):
     if event.fwd_from:
         return
-    lightning_anmation_interval = 6
+    lightning_anmation_interval = 1
     ttl = range(0, 100)
     await event.edit("Chutiye Saade Hue...")
     chars = [
