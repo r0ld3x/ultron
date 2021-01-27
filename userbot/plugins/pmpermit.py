@@ -6,8 +6,8 @@ import time
 
 from telethon import events, functions
 from telethon.tl.functions.users import GetFullUserRequest
-
-from userbot.plugins.sql_helper import pmpermit_sql as pmpermit_sql
+from userbot import *
+import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
 from userbot import ALIVE_NAME, CUSTOM_PMPERMIT, Devil_ID
 from userbot.uniborgConfig import Config
 from userbot.utils import admin_cmd
@@ -19,7 +19,7 @@ PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 HELLPIC = (
     PMPERMIT_PIC
     if PMPERMIT_PIC
-    else "https://telegra.ph/file/24f78cfaaed586a4ec4c5.jpg"
+    else "https://telegra.ph/file/2f0a575332c180d75e7b5.png"
 )
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
