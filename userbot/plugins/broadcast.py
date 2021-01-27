@@ -5,6 +5,16 @@ from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
 from userbot.plugins.sql_helper import broadcast_sql as sql
 from userbot import *
+from telethon import events, functions
+from telethon.tl.functions.users import GetFullUserRequest
+from userbot import *
+import userbot.plugins.sql_helper.pmpermit_sql as pmpermit_sql
+from userbot import ALIVE_NAME, CUSTOM_PMPERMIT, Devil_ID
+from userbot.uniborgConfig import Config
+from userbot.utils import admin_cmd
+from userbot.cmdhelp import CmdHelp
+
+PM_TRUE_FALSE = Config.PM_DATA
 
 
 @bot.on(admin_cmd(pattern="sendto(?: |$)(.*)", command="sendto"))
